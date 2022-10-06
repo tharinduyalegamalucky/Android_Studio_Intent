@@ -16,11 +16,16 @@ public class MainActivity extends AppCompatActivity {
 
         button = findViewById(R.id.btnOne);
 
+        final Intent intent = new Intent(getApplicationContext(),ActivityTwo.class);
+        String name = "Tharindu Yalegama";
+
+        intent.putExtra("USER_NAME",name);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),ActivityTwo.class);
-                startActivity(i);
+                //Launch the activity two
+                startActivity(intent);
             }
         });
     }
