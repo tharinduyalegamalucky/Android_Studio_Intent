@@ -12,7 +12,7 @@ public class ActivityTwo extends AppCompatActivity {
 
     //create button object
     Button button;
-    TextView txtTwo;
+    TextView txtTwo, txtAge;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,16 +21,19 @@ public class ActivityTwo extends AppCompatActivity {
 
         button = findViewById(R.id.btnTwo);
         txtTwo = findViewById(R.id.txtTwo);
+        txtAge = findViewById(R.id.txtAge);
 
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("USER_NAME");
+        int age = intent.getIntExtra("age",0);
 
         txtTwo.setText(name);
+        txtAge.setText(String.valueOf(age));
 
         //set listener to the button
         button.setOnClickListener(v ->  {
-                Intent i = new Intent(getApplicationContext(),ActivityTwo.class);
+                Intent i = new Intent(getApplicationContext(),MainActivity.class);
                 //Launch the activity two
                 startActivity(i);
         });

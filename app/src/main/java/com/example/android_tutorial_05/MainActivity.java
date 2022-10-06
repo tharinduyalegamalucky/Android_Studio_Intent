@@ -18,8 +18,10 @@ public class MainActivity extends AppCompatActivity {
 
         final Intent intent = new Intent(getApplicationContext(),ActivityTwo.class);
         String name = "Tharindu Yalegama";
+        int age = 25;
 
         intent.putExtra("USER_NAME",name);
+        intent.putExtra("age",age);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
